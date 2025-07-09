@@ -32,6 +32,8 @@ test('test', async ({ page }) => {
   await page.locator('#repeatedPassword').click();
   await page.locator('#repeatedPassword').fill('Qwerty123');
   await page.getByRole('button', { name: 'Register' }).click();
+  await page.screenshot({ path: 'screenshots/after-register.png' });
+  await expect(page.locator('.title')).toHaveText(/Welcome.*/);
  
 });
  //await page.screenshot({ path: 'successful-login.png', fullPage: true });
