@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import { dir } from 'console';
 
 test('test', async ({ page }) => {
   await page.goto('https://parabank.parasoft.com/parabank/index.');
@@ -31,4 +32,9 @@ test('test', async ({ page }) => {
   await page.locator('#repeatedPassword').click();
   await page.locator('#repeatedPassword').fill('Qwerty123');
   await page.getByRole('button', { name: 'Register' }).click();
+ 
 });
+ //await page.screenshot({ path: 'successful-login.png', fullPage: true });
+  //await expect(page).toHaveURL('https://parabank.parasoft.com/parabank/index')
+
+
