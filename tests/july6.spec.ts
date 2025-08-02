@@ -4,7 +4,10 @@ const REGISTRATION_URL = 'https://parabank.parasoft.com/parabank/register.htm';
 
 test.describe('ParaBank ▶ Registration page', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto(REGISTRATION_URL);
+    await page.goto(REGISTRATION_URL); 
+    //await page.goto('https://example.com', { waitUntil: 'domcontentloaded' });
+    
+
   });
 
 
@@ -37,8 +40,7 @@ test.describe('ParaBank ▶ Registration page', () => {
  
   
 
-    // Submit form
-    await page.getByRole('button', { name: 'Register' }).click();
+     await page.getByRole('button', { name: 'Register' }).click();
 
     // Expect redirection and confirmation
     await expect(page).toHaveURL('https://parabank.parasoft.com/parabank/register.htm');
